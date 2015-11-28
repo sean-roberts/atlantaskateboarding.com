@@ -9,6 +9,11 @@ var routes = require('./routes/index');
 
 var app = express();
 
+
+// required for making pskill terminate old 
+// versions of the running app on deployment
+process.title = 'atlskatesite';
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
