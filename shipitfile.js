@@ -19,25 +19,24 @@ module.exports = function (shipit) {
   });
 
 
-  // shipit.task('start',function(){
+  shipit.blTask('restart',function(){
+    // var done = this.async();
+    var current = shipit.config.deployTo + '/current';
+    return shipit.remote('cd ' + current + ' && npm start');
+  });
 
-  //   var done = this.async();
-  //   var current = shipit.options.deployTo '/current';
-  //   grunt.shipit.remote('cd ' + current + ' && npm start', done);
+  shipit.blTask('install',function(){
+    // var done = this.async();
+    var current = shipit.config.deployTo + '/current';
+    return shipit.remote('cd ' + current + ' && npm install');
+  });
 
-  //   return shipit.remote('cd ' + current + ' && npm start', done);
-  // });
+  shipit.on('updated', function(){
+    shipit.start(['install']);
+  });
 
-  // shipit.task('install',function(){
-  //   return shipit.remote('npm install');
-  // });
-
-  // shipit.on('updated', function(){
-  //   shipit.start(['install']);
-  // });
-
-  // shipit.on('published', function(){
-  //   // shipit.start(['start']);
-  // });
+  shipit.on('published', function(){
+    shipit.start(['restart']);
+  });
 
 };
