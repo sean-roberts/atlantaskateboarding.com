@@ -7,12 +7,14 @@
 var app = require('../app');
 var debug = require('debug')('atlantaskateboarding.com:server');
 var http = require('http');
+var pkg = require('../package');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(80 /*process.env.PORT || '3000'*/);
+// swapping to 80 as the fallback to fail safe on production
+var port = normalizePort(process.env.PORT || 80);
 app.set('port', port);
 
 /**

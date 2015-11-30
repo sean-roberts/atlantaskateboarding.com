@@ -4,13 +4,17 @@
   "private": true,
   "scripts": {
     "start": "pm2 start ./bin/www --name=atlskating",
-    "restart": "pm2 restart atlskating --silent"
+    "restart": "pm2 restart atlskating --silent",
+    "stop": "pm2 stop atlskating && pm2 delete atlskating",
+    "dev": "export PORT=3000 && export NODE_ENV='development'; pm2 start ./bin/www --name=atlskating --watch"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
     "express": "~4.13.1",
+    "express-handlebars": "^2.0.1",
+    "handlebars": "^4.0.5",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
@@ -18,5 +22,8 @@
   "devDependencies": {
     "shipit-cli": "^1.4.0",
     "shipit-deploy": "^2.0.0"
+  },
+  "config": {
+    "port": 80
   }
 }
