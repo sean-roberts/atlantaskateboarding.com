@@ -28,7 +28,7 @@ module.exports = function (shipit) {
   shipit.blTask('install',function(){
     // var done = this.async();
     var current = shipit.config.deployTo + '/current';
-    return shipit.remote('cd ' + current + ' && npm install');
+    return shipit.remote('cd ' + current + ' && npm install && npm ls -depth 0');
   });
 
   shipit.on('updated', function(){
