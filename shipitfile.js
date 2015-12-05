@@ -21,13 +21,13 @@ module.exports = function (shipit) {
 
   shipit.blTask('restart',function(){
     // var done = this.async();
-    var current = shipit.config.deployTo + '/current';
+    var current = shipit.config.deployTo + 'current';
     return shipit.remote('cd ' + current + ' && npm restart');
   });
 
   shipit.blTask('install',function(){
     // var done = this.async();
-    var current = shipit.config.deployTo + '/current';
+    var current = shipit.config.deployTo + 'current';
     return shipit.remote('cd ' + current + ' && npm install && npm ls -depth 0');
   });
 

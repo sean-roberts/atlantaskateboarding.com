@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "pm2 start ./bin/www --name=atlskating",
-    "restart": "pm2 restart atlskating --silent",
+    "restart": "pm2 stop atlskating && pm2 delete atlskating && pm2 start ./bin/www --name=atlskating",
     "stop": "pm2 stop atlskating && pm2 delete atlskating",
     "dev": "export PORT=3000 && export NODE_ENV='development'; pm2 start ./bin/www --name=atlskating --watch"
   },
