@@ -1,0 +1,38 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #F5F5F5;
+    font-family: Avenir, sans-serif;
+    font-size: 15px;
+    color: #545151;
+}
+
+.splash-container {
+    text-align: right;
+    padding-right: 10%;
+    background: transparent url('/images/atl-skyline-outline.png') no-repeat center bottom;
+    background-size: 105%;
+    height: 100%;
+    min-height: 600px;
+}
+
+.splash-container h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: -1px;
+    margin-bottom: 50px;
+    padding-top: 15%;
+}
+
+.splash-container p {
+    font-family: monospace;
+    text-align: right;
+    color: #888;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+} 
