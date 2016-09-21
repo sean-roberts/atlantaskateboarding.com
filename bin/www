@@ -14,7 +14,7 @@ var pkg = require('../package');
  */
 
 // swapping to 80 as the fallback to fail safe on production
-var port = normalizePort(process.env.PORT || 80);
+var port = normalizePort(process.env.PORT || 54321);
 app.set('port', port);
 
 /**

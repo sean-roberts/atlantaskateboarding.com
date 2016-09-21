@@ -3,16 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "pm2 start ./bin/www --name=atlskating",
+    "start": "node ./bin/www",
     "restart": "pm2 stop atlskating && pm2 delete atlskating && pm2 start ./bin/www --name=atlskating",
     "stop": "pm2 stop atlskating && pm2 delete atlskating",
-    "dev": "export PORT=3000 && export NODE_ENV='development'; pm2 start ./bin/www --name=atlskating --watch"
+    "dev": "export NODE_ENV='development'; pm2 start ./bin/www --name=atlskating --watch"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
-    "express": "~4.13.1",
+    "express": "^4.13.4",
     "express-handlebars": "^2.0.1",
     "handlebars": "^4.0.5",
     "jade": "~1.11.0",
