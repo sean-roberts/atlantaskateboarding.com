@@ -10,9 +10,7 @@ var routes = require('./routes/index');
 var app = express();
 
 
-// required for making pskill terminate old 
-// versions of the running app on deployment
-// process.title = 'atlskatesite';
+app.set('x-powered-by', false);
 
 
 // view engine setup
